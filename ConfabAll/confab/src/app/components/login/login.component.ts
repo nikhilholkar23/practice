@@ -24,6 +24,8 @@ export class LoginComponent  {
   private submitProcessing: boolean;
   constructor(private router: Router,private loginservice: AuthenticationService,public dialogRef: MatDialogRef<LoginComponent>,
     @Inject(MAT_DIALOG_DATA) public data: any) {}
+
+    
     setLoginView(option: boolean) {
       this.fieldsIncorrect = false;
       this.loginView = option;
@@ -34,7 +36,7 @@ export class LoginComponent  {
       (this.loginservice.authenticate(this.username, this.password).subscribe(
         
         data => {
-          this.router.navigate(['test'])
+          this.router.navigate(['emp'])
           this.invalidLogin = false
         },
         error => {

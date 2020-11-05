@@ -6,6 +6,6 @@
         <span class="example-spacer"></span>
         <a mat-button style="float:right;" *ngIf="!loginService.isUserLoggedIn()" (click)="openDialog()" class="nav-link">Login</a>
          <a mat-button *ngIf="!loginService.isUserLoggedIn()" (click)="openDialog()" class="nav-link">Signup</a> 
-         <a mat-button  *ngIf="loginService.isUserLoggedIn()" style="float: right;" routerLink='' class="nav-link">LogOut</a>
+         <a mat-button  *ngIf="loginService.isUserLoggedIn()" style="float: right;" routerLink='login' class="nav-link">LogOut</a>
     </mat-toolbar-row>
 </mat-toolbar>

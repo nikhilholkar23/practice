@@ -25,7 +25,9 @@ import { MatDialogRef} from '@angular/material/dialog';
 import { LogoutComponent } from './logout/logout.component';
 import { PresentationComponent } from './presentation/presentation.component';
 import { TestComponent } from './test/test.component';
-
+import { ListuserComponent } from './components/listuser/listuser.component';
+import { MatTableModule } from '@angular/material/table'  
+import { HttpClientService } from './service/httpclient.service';
 @NgModule({
   declarations: [
     AppComponent,
@@ -36,12 +38,13 @@ import { TestComponent } from './test/test.component';
     LogoutComponent,
     PresentationComponent,
     TestComponent,
+    ListuserComponent,
     
   ],
   imports: [
     BrowserModule, BrowserAnimationsModule,
     MatDialogModule,
-    
+    MatTableModule,
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
@@ -60,7 +63,7 @@ import { TestComponent } from './test/test.component';
   providers: [{
     provide: MatDialogRef,
     useValue: {}
-  },{ provide: HTTP_INTERCEPTORS, useClass: BasicAuthHtppInterceptorService, multi: true }],
+  },{ provide: HTTP_INTERCEPTORS, useClass: BasicAuthHtppInterceptorService, multi: true },HttpClientService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

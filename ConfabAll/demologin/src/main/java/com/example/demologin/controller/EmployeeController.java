@@ -11,10 +11,13 @@ import org.springframework.web.bind.annotation.CrossOrigin;
 import java.util.List;
 
 @RestController
+//@CrossOrigin(origins = "http://localhost:4200")
 @CrossOrigin(origins = "http://localhost:4200")
+
 public class EmployeeController {
     @Autowired
     private EmplyeeService emplyeeService;
+    @CrossOrigin
     @GetMapping("/Emplist")
     public List<Employee>getList()
     {

@@ -5,6 +5,7 @@ import { PresentationComponent } from './presentation/presentation.component';
 import { AuthGaurdService } from './service/auth-gaurd.service';
 import { LogoutComponent } from './logout/logout.component';
 import { TestComponent } from './test/test.component';
+import { ListuserComponent } from './components/listuser/listuser.component';
 
 
 const routes: Routes = [
@@ -22,6 +23,12 @@ const routes: Routes = [
   {
     path:'logout',component:LogoutComponent,canActivate:[AuthGaurdService]
 
+  },
+  {
+    path:'emp',component:ListuserComponent,canActivate:[AuthGaurdService]
+  },
+  {
+    path:'' ,component:LoginComponent
   }
 ];
 

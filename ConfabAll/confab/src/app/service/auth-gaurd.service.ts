@@ -14,7 +14,7 @@ export class AuthGaurdService {
     if (this.authService.isUserLoggedIn())
       return true;
 
-    this.router.navigate(['']);
+    this.router.navigate(['login']);
     return false;
 
   }
